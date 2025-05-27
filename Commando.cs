@@ -16,9 +16,15 @@ namespace Commandos
             Tools = tools;
         }
 
-        public string GetName(int Renk)
+        public string? GetName(string Renk)
         {
-            return "";
+            if (Renk == "GENERAL")
+            {
+                return Name;
+                
+            }
+            Console.WriteLine($"The information is not accessible to the {Renk} rank.");
+            return null;
         }
 
         public void Walk()

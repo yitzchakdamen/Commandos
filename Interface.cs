@@ -7,7 +7,7 @@ namespace Commandos.Interface
         string Name { set; }
         string CodeName { get; set; }
         List<string> Tools { get; }
-        string GetName(int Renk);
+        string? GetName(string Renk);
     }
 
     interface IWalk
