@@ -13,19 +13,32 @@ namespace Commandos
         {
             Print("Parachuting");
         }
+        
+        public override void Attak()
+        {
+            base.Attak();
+            Console.WriteLine("The attack was carried out by AirCommando");
+        } 
+
     }
-    
+
     class SeaCommando : Commando, ISeaCommando
     {
         public SeaCommando(string name, string codeName) : base(name, codeName)
         {
-            
+
         }
 
         public void Swimming()
         {
-            Print("Swimming");   
+            Print("Swimming");
         }
+
+        public override void Attak()
+        {
+            base.Attak();
+            Console.WriteLine("The attack was carried out by SeaCommando");
+        } 
     }
 
 }

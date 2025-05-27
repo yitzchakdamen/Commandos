@@ -44,7 +44,7 @@ namespace Commandos
 
         }
 
-        public void Attak()
+        public virtual void Attak()
         {
             Print("Attak");   
         }
