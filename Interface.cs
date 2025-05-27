@@ -1,12 +1,13 @@
 
 namespace Commandos.Interface
 {
-    interface ICommando : IWalk, IAttack, IHide
+    interface ISoldier : IWalk, IAttack, IHide
     {
         string Name { set; }
         string CodeName { get; set; }
         List<string> Tools { get; }
-        string? GetName(string Renk);
+        string Status { get; set; }
+        string? SayName(string Renk);
     }
 
     interface IWalk
@@ -44,12 +45,12 @@ namespace Commandos.Interface
         void Shoot();
     }
 
-    interface IAirCommando : ICommando, IParachuting
+    interface IAirCommando : ISoldier, IParachuting
     {
 
     }
 
-    interface ISeaCommando : ICommando, ISwimming
+    interface ISeaCommando : ISoldier, ISwimming
     {
 
     }

@@ -2,7 +2,7 @@ using Commandos.Interface;
 
 namespace Commandos
 {
-    class AirCommando : Commando, IAirCommando
+    class AirCommando : Soldier, IAirCommando
     {
         public AirCommando(string name, string codeName) : base(name, codeName)
         {
@@ -22,7 +22,7 @@ namespace Commandos
 
     }
 
-    class SeaCommando : Commando, ISeaCommando
+    class SeaCommando : Soldier, ISeaCommando
     {
         public SeaCommando(string name, string codeName) : base(name, codeName)
         {

@@ -4,16 +4,11 @@ namespace Commandos
 {
     class SystemManagement
     {
-        public List<ICommando> ListSoldiers = Fors.ListSoldiers;
-        public SystemManagement(List<ICommando> ListSoldiers)
+        public List<ISoldier> ListSoldiers;
+        public SystemManagement(List<ISoldier> listSoldiers)
         {
-            foreach (ICommando Soldiers in ListSoldiers)
-            {
-                Fors.AadToList(Soldiers);
-                
-            }
+            ListSoldiers = listSoldiers;   
         }
-    
     }
 
 }

@@ -2,22 +2,23 @@ using Commandos.Interface;
 
 namespace Commandos
 {
-    class Commando : ICommando
+    class Soldier : ISoldier
     {
 
         public string Name { protected get; set; }
         public string CodeName { get; set; }
         public List<string> Tools { get; }
-        public string Status = "standing comfortably";
+        public string Status { get; set; }
 
-        public Commando(string name, string codeName)
+        public Soldier(string name, string codeName)
         {
             Name = name;
             CodeName = codeName;
             Tools = new() { "Hammer", "chisel", "rope", "bag", "water", "bottle" };
+            Status = "standing comfortably";
         }
 
-        public string? GetName(string Renk)
+        public string? SayName(string Renk)
         {
             if (Renk == "GENERAL")
             {
