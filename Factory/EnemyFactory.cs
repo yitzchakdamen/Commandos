@@ -19,7 +19,7 @@ namespace Commandos.Factory
             "Carlos Mendoza"
         };
 
-        static public List<Enemy> ListEnemy;
+        static public List<Enemy> ListEnemy = new();
 
         static public void initialization()
         {
@@ -28,10 +28,7 @@ namespace Commandos.Factory
 
         static public List<Enemy> ProducesEnemy()
         {
-            int amount = random.Next(10, 20);
-            List<Enemy> ListEnemy = new();
-
-            for (int i = 0; i < amount; i++)
+            for (int i = 0; i < random.Next(10, 20); i++)
             {
                 string name = terroristNames[random.Next(0, terroristNames.Count)];
                 Enemy enemy = new(name);

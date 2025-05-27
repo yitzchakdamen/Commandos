@@ -10,20 +10,20 @@ namespace Commandos
 
             Game game = new();
 
-            Tests(game.systemManagement);
+            Tests1(game);
             Tests2(game);
         }
 
 
 
-        public static void Tests(SystemManagement systemManagement)
+        public static void Tests1(Game game)
         {
-            foreach (var item in systemManagement.ListSoldiers)
+            foreach (var item in game.ListSoldiers)
             {
                 Console.WriteLine("===================");
                 Console.WriteLine(item.Status);
                 item.Hide();
-                // item.Attak();
+                item.Attak(game.ListEnemy[1]);
                 Console.WriteLine(item.Status);
                 Console.WriteLine(item.CodeName);
                 Console.WriteLine(item.SayName("GENERAL"));

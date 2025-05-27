@@ -48,7 +48,12 @@ namespace Commandos
 
         public virtual void Attak(Enemy e)
         {
-            Print($"Im attacking {e.Name}");   
+            Print($"Im attacking {e.Name}");
+            e.Life -= 1;
+            if (e.Life == 0)
+            {
+                e.StatusLife = false;
+            }
         }
 
         public void Print(string action)

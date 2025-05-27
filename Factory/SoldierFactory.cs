@@ -5,42 +5,38 @@ namespace Commandos.Factory
 {
     public class SoldierFactory
     {
-        static public List<ISoldier> ListSoldier;
+        static public List<ISoldier> ListSoldier = new();
 
         static public void Initialization()
         {
-            System.Console.WriteLine("Choose the type of soldier to produce");
-            System.Console.WriteLine("1 ==> Soldier");
-            System.Console.WriteLine("2 ==> Air Commando");
-            System.Console.WriteLine("3 ==> Sea Commando");
+            Print();
             string choice = Console.ReadLine()!;
 
             switch (choice)
             {
                 case "1":
-                    ListSoldier = ProducesSoldier();
+                    ListSoldier.AddRange(ProducesSoldier());
                     break;
 
                 case "2":
-                    ListSoldier = ProducesAirCommando();
+                    ListSoldier.AddRange(ProducesAirCommando());
                     break;
 
                 case "3":
-                    ListSoldier = ProducesSeaCommando();
+                    ListSoldier.AddRange(ProducesSeaCommando());
                     break;
 
                 default:
-                    System.Console.WriteLine("Wrong choice");
+                    Console.WriteLine("Wrong choice");
                     break;
             }
         }
 
-       static List<ISoldier> ProducesSoldier()
+        static List<ISoldier> ProducesSoldier()
         {
             Soldier Commando1 = new("nameB", "a");
             Soldier Commando2 = new("nameA", "b");
             return new List<ISoldier>() { Commando1, Commando2, };
-
         }
 
         static List<ISoldier> ProducesAirCommando()
@@ -50,13 +46,21 @@ namespace Commandos.Factory
 
             return new List<ISoldier>() { AirCommando1, AirCommando2 };
         }
-        
+
         static List<ISoldier> ProducesSeaCommando()
         {
             SeaCommando SeaCommando1 = new("SeaCommando", "c");
             SeaCommando SeaCommando2 = new("SeaCommando", "d");
 
             return new List<ISoldier>() { SeaCommando1, SeaCommando2 };
+        }
+
+        public static void Print()
+        {
+            System.Console.WriteLine("Choose the type of soldier to produce");
+            System.Console.WriteLine("1 ==> Soldier");
+            System.Console.WriteLine("2 ==> Air Commando");
+            System.Console.WriteLine("3 ==> Sea Commando");
         }
 
     } 
