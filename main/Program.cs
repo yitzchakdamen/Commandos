@@ -8,9 +8,10 @@ namespace Commandos
         public static void Main()
         {
 
-            // List<ISoldier> ListInitialization = Initialization();
-            // SystemManagement SystemManagement = new(ListInitialization);
-            // Tests(SystemManagement);
+            Game game = new();
+
+            Tests(game.systemManagement);
+            Tests2(game);
         }
 
 
@@ -30,8 +31,19 @@ namespace Commandos
                 Console.WriteLine(item.SayName(""));
                 Console.WriteLine("===================");
             }
-            
-        }        
+
+        }
+
+        public static void Tests2(Game game)
+        {
+            foreach (var item in game.ListEnemy)
+            {
+                Console.WriteLine("===================");
+                Console.WriteLine(item.Name);
+
+                Console.WriteLine("===================");
+            }
+        }
     }
     
 }

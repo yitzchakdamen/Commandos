@@ -2,10 +2,10 @@ using Commandos.EnemyArea;
 
 namespace Commandos.Factory
 {
-    class EnemyFactory
+    static public class EnemyFactory
     {
-        public Random random = new();
-        List<string> terroristNames = new()
+        static public Random random = new();
+        static List<string> terroristNames = new()
         {
             "Khalid Al-Masri",
             "Yusuf Karim",
@@ -19,7 +19,14 @@ namespace Commandos.Factory
             "Carlos Mendoza"
         };
 
-        public List<Enemy> ProducesEnemy()
+        static public List<Enemy> ListEnemy;
+
+        static public void initialization()
+        {
+            ListEnemy = ProducesEnemy();
+        }
+
+        static public List<Enemy> ProducesEnemy()
         {
             int amount = random.Next(10, 20);
             List<Enemy> ListEnemy = new();

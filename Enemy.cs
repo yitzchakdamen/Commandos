@@ -1,6 +1,6 @@
 namespace Commandos.EnemyArea
 {
-    class Enemy
+    public class Enemy
     {
         public string Name;
         public int Life;
