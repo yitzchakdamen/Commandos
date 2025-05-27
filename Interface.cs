@@ -55,4 +55,10 @@ namespace Commandos.Interface
 
     }
 
+    interface Force
+    {
+        List<ICommando> ListSoldiers { get; set; }
+
+        
+    }
 }
