@@ -1,25 +1,33 @@
-
+using Commandos;
+using Commandos.Interface;
 
 namespace Commandos.Factory
 {
     class SoldierFactory
     {
-        List<string> terroristNames = new()
+        public List<ISoldier> ProducesSoldier()
         {
-            "Khalid Al-Masri",
-            "Yusuf Karim",
-            "Rashid Al-Hassan",
-            "Ivan Petrov",
-            "Miguel Cortez",
-            "Li Zhang",
-            "Fatima El-Amin",
-            "Viktor Dragunov",
-            "Jamal Als-Zahir",
-            "Carlos Mendoza"
-        };
+            Soldier Commando1 = new("nameB", "a");
+            Soldier Commando2 = new("nameA", "b");
+            return new List<ISoldier>() { Commando1, Commando2, };
 
-        // public static List
+        }
+
+        public List<ISoldier> ProducesAirCommando()
+        {
+            AirCommando AirCommando1 = new("AirCommando", "c");
+            AirCommando AirCommando2 = new("AirCommando", "d");
+
+            return new List<ISoldier>() { AirCommando1, AirCommando2 };
+        }
         
-    }
-    
+        public List<ISoldier> ProducesSeaCommando()
+        {
+            SeaCommando SeaCommando1 = new("AirCommando", "c");
+            SeaCommando SeaCommando2 = new("AirCommando", "d");
+
+            return new List<ISoldier>() { SeaCommando1, SeaCommando2 };
+        }
+
+    } 
 }

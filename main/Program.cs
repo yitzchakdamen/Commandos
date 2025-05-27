@@ -8,25 +8,12 @@ namespace Commandos
         public static void Main()
         {
 
-            List<ISoldier> ListInitialization = Initialization();
-            SystemManagement SystemManagement = new(ListInitialization);
-            Tests(SystemManagement);
+            // List<ISoldier> ListInitialization = Initialization();
+            // SystemManagement SystemManagement = new(ListInitialization);
+            // Tests(SystemManagement);
         }
 
-        public static List<ISoldier> Initialization()
-        {
-            Soldier Commando1 = new("nameB", "a");
-            Soldier Commando2 = new("nameA", "b");
-            AirCommando AirCommando = new("AirCommando", "c");
-            SeaCommando SeaCommando = new("SeaCommando", "e");
-            return new List<ISoldier>()
-            {
-                Commando1,
-                Commando2,
-                AirCommando,
-                SeaCommando
-            };
-        }
+
 
         public static void Tests(SystemManagement systemManagement)
         {
