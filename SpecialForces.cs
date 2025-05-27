@@ -1,4 +1,5 @@
 using Commandos.Interface;
+using Commandos.EnemyArea;
 
 namespace Commandos
 {
@@ -14,9 +15,9 @@ namespace Commandos
             Print("Parachuting");
         }
         
-        public override void Attak()
+        public override void Attak(Enemy e)
         {
-            base.Attak();
+            base.Attak(e);
             Console.WriteLine("The attack was carried out by AirCommando");
         } 
 
@@ -34,9 +35,9 @@ namespace Commandos
             Print("Swimming");
         }
 
-        public override void Attak()
+        public override void Attak(Enemy e)
         {
-            base.Attak();
+            base.Attak(e);
             Console.WriteLine("The attack was carried out by SeaCommando");
         } 
     }

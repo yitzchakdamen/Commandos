@@ -1,4 +1,4 @@
-namespace Commandos.Enemy
+namespace Commandos.EnemyArea
 {
     class Enemy
     {
@@ -12,7 +12,7 @@ namespace Commandos.Enemy
             Life = 100;
             StatusLife = true;
         }
-        
+
         static public void Shout()
         {
             Console.WriteLine("======== I am a enemy!!! ======== ");

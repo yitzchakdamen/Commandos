@@ -2,7 +2,7 @@
 
 namespace Commandos.Factory
 {
-    class WeaponFactory
+    class SoldierFactory
     {
         List<string> terroristNames = new()
         {
@@ -14,9 +14,11 @@ namespace Commandos.Factory
             "Li Zhang",
             "Fatima El-Amin",
             "Viktor Dragunov",
-            "Jamal Al-Zahir",
+            "Jamal Als-Zahir",
             "Carlos Mendoza"
         };
+
+        // public static List
         
     }
     

@@ -1,4 +1,5 @@
 using Commandos.Interface;
+using Commandos.EnemyArea;
 
 namespace Commandos
 {
@@ -45,9 +46,9 @@ namespace Commandos
 
         }
 
-        public virtual void Attak()
+        public virtual void Attak(Enemy e)
         {
-            Print("Attak");   
+            Print($"Im attacking {e.Name}");   
         }
 
         public void Print(string action)

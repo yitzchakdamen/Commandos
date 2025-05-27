@@ -35,7 +35,7 @@ namespace Commandos
                 Console.WriteLine("===================");
                 Console.WriteLine(item.Status);
                 item.Hide();
-                item.Attak();
+                // item.Attak();
                 Console.WriteLine(item.Status);
                 Console.WriteLine(item.CodeName);
                 Console.WriteLine(item.SayName("GENERAL"));

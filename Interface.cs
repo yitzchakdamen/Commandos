@@ -1,3 +1,4 @@
+using Commandos.EnemyArea;
 
 namespace Commandos.Interface
 {
@@ -17,7 +18,7 @@ namespace Commandos.Interface
 
     interface IAttack
     {
-        void Attak();
+        void Attak(Enemy e);
 
     }
 
