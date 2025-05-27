@@ -3,9 +3,39 @@ using Commandos.Interface;
 
 namespace Commandos.Factory
 {
-    class SoldierFactory
+    public class SoldierFactory
     {
-        public List<ISoldier> ProducesSoldier()
+        static public List<ISoldier> ListSoldier;
+
+        static public void Initialization()
+        {
+            System.Console.WriteLine("Choose the type of soldier to produce");
+            System.Console.WriteLine("1 ==> Soldier");
+            System.Console.WriteLine("2 ==> Air Commando");
+            System.Console.WriteLine("3 ==> Sea Commando");
+            string choice = Console.ReadLine()!;
+
+            switch (choice)
+            {
+                case "1":
+                    ListSoldier = ProducesSoldier();
+                    break;
+
+                case "2":
+                    ListSoldier = ProducesAirCommando();
+                    break;
+
+                case "3":
+                    ListSoldier = ProducesSeaCommando();
+                    break;
+
+                default:
+                    System.Console.WriteLine("Wrong choice");
+                    break;
+            }
+        }
+
+       static List<ISoldier> ProducesSoldier()
         {
             Soldier Commando1 = new("nameB", "a");
             Soldier Commando2 = new("nameA", "b");
@@ -13,7 +43,7 @@ namespace Commandos.Factory
 
         }
 
-        public List<ISoldier> ProducesAirCommando()
+        static List<ISoldier> ProducesAirCommando()
         {
             AirCommando AirCommando1 = new("AirCommando", "c");
             AirCommando AirCommando2 = new("AirCommando", "d");
@@ -21,10 +51,10 @@ namespace Commandos.Factory
             return new List<ISoldier>() { AirCommando1, AirCommando2 };
         }
         
-        public List<ISoldier> ProducesSeaCommando()
+        static List<ISoldier> ProducesSeaCommando()
         {
-            SeaCommando SeaCommando1 = new("AirCommando", "c");
-            SeaCommando SeaCommando2 = new("AirCommando", "d");
+            SeaCommando SeaCommando1 = new("SeaCommando", "c");
+            SeaCommando SeaCommando2 = new("SeaCommando", "d");
 
             return new List<ISoldier>() { SeaCommando1, SeaCommando2 };
         }

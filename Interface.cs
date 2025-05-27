@@ -2,7 +2,7 @@ using Commandos.EnemyArea;
 
 namespace Commandos.Interface
 {
-    interface ISoldier : IWalk, IAttack, IHide
+    public interface ISoldier : IWalk, IAttack, IHide
     {
         string Name { set; }
         string CodeName { get; set; }
@@ -11,18 +11,18 @@ namespace Commandos.Interface
         string? SayName(string Renk);
     }
 
-    interface IWalk
+    public interface IWalk
     {
         void Walk();
     }
 
-    interface IAttack
+    public interface IAttack
     {
         void Attak(Enemy e);
 
     }
 
-    interface IHide
+    public interface IHide
     {
         void Hide();
     }
