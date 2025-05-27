@@ -1,40 +1,58 @@
+using System.Reflection.Metadata.Ecma335;
+
 namespace Commandos.Interface
 {
     interface ICommando : IWalk, IAttack, IHide
     {
-        string Name { get; set; }
+        string Name { set; }
         string CodeName { get; set; }
         List<string> Tools { get; set; }
+        string GetName(int Renk);
     }
 
     interface IWalk
     {
-        public void Walk();
+        void Walk();
     }
 
     interface IAttack
     {
-        public void Attak();
+        void Attak();
 
     }
 
     interface IHide
     {
-        public void Hide();
+        void Hide();
     }
+
+    interface IParachuting
+    {
+        void Parachuting();
+    }
+
+    interface ISwimming
+    {
+        void Swimming();
+    }
+
 
     interface IWeapon
     {
-        public string Name { get; set; }
-        public string manufacturer { get; set; }
-        public int numOfBalls { get; set; }
-    } 
+        string Name { get; set; }
+        string Manufacturer { get; set; }
+        int NumOfBullets { get; set; }
+        void Shoot();
+    }
+
+    interface IAirCommando : ICommando, IParachuting
+    {
+
+    }
+
+    interface ISeaCommando : ICommando, ISwimming
+    {
+
+    }
+
 }
-
-
-
-
-
-
-
- 
