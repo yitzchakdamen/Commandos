@@ -1,13 +1,14 @@
-using System.Reflection.Metadata.Ecma335;
+using Commandos.EnemyArea;
 
 namespace Commandos.Interface
 {
-    interface ICommando : IWalk, IAttack, IHide
+    interface ISoldier : IWalk, IAttack, IHide
     {
         string Name { set; }
         string CodeName { get; set; }
-        List<string> Tools { get; set; }
-        string GetName(int Renk);
+        List<string> Tools { get; }
+        string Status { get; set; }
+        string? SayName(string Renk);
     }
 
     interface IWalk
@@ -17,7 +18,7 @@ namespace Commandos.Interface
 
     interface IAttack
     {
-        void Attak();
+        void Attak(Enemy e);
 
     }
 
@@ -45,20 +46,14 @@ namespace Commandos.Interface
         void Shoot();
     }
 
-    interface IAirCommando : ICommando, IParachuting
+    interface IAirCommando : ISoldier, IParachuting
     {
 
     }
 
-    interface ISeaCommando : ICommando, ISwimming
+    interface ISeaCommando : ISoldier, ISwimming
     {
 
     }
 
-    interface Force
-    {
-        List<ICommando> ListSoldiers { get; set; }
-
-        
-    }
 }
