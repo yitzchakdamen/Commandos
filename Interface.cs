@@ -56,4 +56,9 @@ namespace Commandos.Interface
 
     }
 
+    interface IShootable
+    {
+        
+    }
+
 }
