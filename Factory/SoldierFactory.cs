@@ -15,44 +15,21 @@ namespace Commandos.Factory
             switch (choice)
             {
                 case "1":
-                    ListSoldier.AddRange(ProducesSoldier());
+                    ListSoldier.AddRange(SoldierFactoryActivate.ProducesSoldier());
                     break;
 
                 case "2":
-                    ListSoldier.AddRange(ProducesAirCommando());
+                    ListSoldier.AddRange(SoldierFactoryActivate.ProducesAirCommando());
                     break;
 
                 case "3":
-                    ListSoldier.AddRange(ProducesSeaCommando());
+                    ListSoldier.AddRange(SoldierFactoryActivate.ProducesSeaCommando());
                     break;
 
                 default:
                     Console.WriteLine("Wrong choice");
                     break;
             }
-        }
-
-        static List<ISoldier> ProducesSoldier()
-        {
-            Soldier Commando1 = new("nameB", "a");
-            Soldier Commando2 = new("nameA", "b");
-            return new List<ISoldier>() { Commando1, Commando2, };
-        }
-
-        static List<ISoldier> ProducesAirCommando()
-        {
-            AirCommando AirCommando1 = new("AirCommando", "c");
-            AirCommando AirCommando2 = new("AirCommando", "d");
-
-            return new List<ISoldier>() { AirCommando1, AirCommando2 };
-        }
-
-        static List<ISoldier> ProducesSeaCommando()
-        {
-            SeaCommando SeaCommando1 = new("SeaCommando", "c");
-            SeaCommando SeaCommando2 = new("SeaCommando", "d");
-
-            return new List<ISoldier>() { SeaCommando1, SeaCommando2 };
         }
 
         public static void Print()
@@ -64,4 +41,31 @@ namespace Commandos.Factory
         }
 
     } 
+
+
+    static class SoldierFactoryActivate
+    {
+        public static List<ISoldier> ProducesSoldier()
+        {
+            Soldier Commando1 = new("nameB", "a");
+            Soldier Commando2 = new("nameA", "b");
+            return new List<ISoldier>() { Commando1, Commando2, };
+        }
+
+        public static List<ISoldier> ProducesAirCommando()
+        {
+            AirCommando AirCommando1 = new("AirCommando", "c");
+            AirCommando AirCommando2 = new("AirCommando", "d");
+
+            return new List<ISoldier>() { AirCommando1, AirCommando2 };
+        }
+
+        public static List<ISoldier> ProducesSeaCommando()
+        {
+            SeaCommando SeaCommando1 = new("SeaCommando", "c");
+            SeaCommando SeaCommando2 = new("SeaCommando", "d");
+
+            return new List<ISoldier>() { SeaCommando1, SeaCommando2 };
+        }
+    }
 }

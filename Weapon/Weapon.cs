@@ -1,22 +1,13 @@
 using Commandos.Interface;
 
-namespace Commandos
+namespace Commandos.WeaponArea
 {
     class Weapon : IWeapon
     {
         public string Name { get; set; }
-        public string Manufacturer { get; set; }
-        public int NumOfBullets { get; set; }
-        public Weapon(string name, string manufacturer, int numOfBullets)
+        public Weapon(string name)
         {
             Name = name;
-            Manufacturer = manufacturer;
-            NumOfBullets = numOfBullets;
-        }
-        public void Shoot()
-        {
-            Console.WriteLine("BOOOOM");
-            NumOfBullets -= 1;
         }
         
     }

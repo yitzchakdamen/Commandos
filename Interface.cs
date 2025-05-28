@@ -37,15 +37,6 @@ namespace Commandos.Interface
         void Swimming();
     }
 
-
-    interface IWeapon
-    {
-        string Name { get; set; }
-        string Manufacturer { get; set; }
-        int NumOfBullets { get; set; }
-        void Shoot();
-    }
-
     interface IAirCommando : ISoldier, IParachuting
     {
 
@@ -54,11 +45,6 @@ namespace Commandos.Interface
     interface ISeaCommando : ISoldier, ISwimming
     {
 
-    }
-
-    interface IShootable
-    {
-        
     }
 
 }
